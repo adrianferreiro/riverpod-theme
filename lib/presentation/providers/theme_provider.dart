@@ -41,7 +41,13 @@ class ThemeNotifier extends StateNotifier<AppTheme> {
   }
    */
 
-  void toggleDarkMode() {}
+  void toggleDarkMode() {
+    //el nuevo estado va a ser una copia del estado actual
+    // pero le mandamos el valor opuesto
+    // riverpod se va a dar cuenta que le estoy asignando un nuevo estado
+    // y se va a encargar a los widget que están escuchando
+    state = state.copyWith(isDarkMode: !state.isDarkMode);
+  }
 
   void changeColorIndex(int colorIndex) {}
 }

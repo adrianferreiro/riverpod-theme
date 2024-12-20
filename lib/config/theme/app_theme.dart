@@ -29,4 +29,18 @@ class AppTheme {
         colorSchemeSeed: colorList[selectedColor],
         appBarTheme: const AppBarTheme(centerTitle: false),
       );
+  AppTheme copyWith({
+    int? selectedColor,
+    bool? isDarkMode,
+  }) =>
+      AppTheme(
+        //pusimos como opcional selectedColor e isdarmode
+        //si recibimos como parametro a los mismos en el copyWith
+        //entonces utilizamos el valor o sino tomamos el valor configurado por defecto
+        //esa es la esencia del copyWith
+        //nos permite manter un estado inmutable con propiedades "final"
+        //y lo cambiamos creando un nuevo estado
+        selectedColor: selectedColor ?? this.selectedColor,
+        isDarkMode: isDarkMode ?? this.isDarkMode,
+      );
 }
