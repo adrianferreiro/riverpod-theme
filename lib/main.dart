@@ -22,7 +22,7 @@ class MainApp extends ConsumerWidget {
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme().getTheme(),
+      theme: appTheme.getTheme(),
     );
   }
 }
